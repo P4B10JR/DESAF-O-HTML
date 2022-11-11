@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Tienda de ropa</h1>
-
+    <button type="submit"><a href="index.html">Inicio</a></button>
     <h2>Lista de ropa</h2>
     <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
     <table border="1">
@@ -43,6 +43,9 @@
         <td><?php echo $reg['marca']; ?></td>
         <td><?php echo $reg['talle']; ?></td>
         <td><?php echo $reg['precio']; ?></td>
+        <td><img src="data:image/png;base64, <?php echo base64_encode($reg['imagen'])?>" alt="" width="100px" height="100px"></td>
+        <td><a href="modificar.php?id=<?php echo $reg['id'];?>">Editar</a></td>
+        <td><a href="borrar.php?id=<?php echo $reg['id'];?>">Borrar</a></td>
         </tr>
     <?php } ?>
     </table>
